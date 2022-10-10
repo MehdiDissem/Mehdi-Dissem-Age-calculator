@@ -21,7 +21,7 @@ body {
   }
 
 
-  #submit {
+  #submit,#refresh {
     position: relative;
     right: -100px;
     font-size: 16px;
@@ -36,7 +36,7 @@ body {
     touch-action: manipulation;
  }
 
-  #submit:after {
+  #submit:after,#refresh:after {
     content: "";
     background-color: #ffe54c;
     width: 100%;
@@ -48,9 +48,40 @@ body {
     transition: 0.2s;
  }
 
-  #submit:hover:after {
-  top: 0px;
-  left: 0px;
+  #submit:hover:after,#refresh:hover:after {
+    top: 0px;
+    left: 0px;
+ }
+
+  #funnyButton{    
+    position: relative;
+    right: 0px;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    touch-action: manipulation;
+ }
+
+ #funnyButton:after{
+    content: "";
+    background-color: #ffe54c;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+ }
+
+ #funnyButton:hover:after{
+    top: 0px;
+    left: 0px;
  }
 
  #values{
