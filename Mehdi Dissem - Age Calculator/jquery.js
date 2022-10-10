@@ -17,6 +17,8 @@ $(document).ready(function(){
         years = $('#years').val()*1;
         if(days === 0 && months === 0 && years === 0){
             alert("Please enter your age")
+        } else if(days===0 || months===0 || years ===0){
+            alert("come on you can't be born in a day 0")
         } else {
         $('#values').show()
         $('#funny').show()
@@ -33,11 +35,12 @@ const nineties = new Audio("./audio/Nirvana - Smells Like Teen Spirit .mp3")
 const twenties = new Audio("./audio/Destiny's Child - Say My Name .mp3")
 const twentyten = new Audio("./audio/Kesha - TiK ToK .mp3")
 const twentytwenty = new Audio("./audio/baby shark .mp3")
+const coffin = new Audio("./audio/Coffin Dance.mp3")
 
 $(document).ready(function(){
     $('#funnyButton').one(('click'),function(){
         $('#astralbutton').show()
-        if (years<=1970){
+        if (years>1960 && years<=1970){
             $('#funnyString').append($('<img src="./audio/Senior-and-Elderly-Care-Living-Options.jpg" />'))
             sixties.play()
         } else if(years>=1970 && years < 1980) {
@@ -57,16 +60,21 @@ $(document).ready(function(){
         }else if(years>=2010 && years<2020){
             twentyten.play()
             $('#funnyString').append('<img src="https://i.imgflip.com/472qqf.jpg" />')
-        }else if(years>=2020){
+        }else if(years>=2020 && years<=2022){
             twentytwenty.play()
             $('#funnyString').append('<img src="https://i.pinimg.com/originals/f2/a6/69/f2a6691f43a9dda204e70f4c5ac4d9ca.gif" />')
+        }else if(years>=2023){
+            $('#funnyString').append('<img src="https://media.tenor.com/7qKSpgK9daQAAAAC/glow-sperm.gif />')
+        } else if(years<=1960){
+            coffin.play()
+            $('#funnyString').append('<img src="./audio/dancing-coffin-coffin-dance (1).gif" />')
         }
     })
 })
 
 function zodiac(days, months){
     var Asign=""
-    if (months == 12){    
+    if (months === 12){    
         if (days < 22){
             Asign = "Sagittarius"
     }else{
@@ -145,8 +153,10 @@ function zodiac(days, months){
 
 $(document).ready(function(){
     $('#astralbutton').one(('click'),function(){
+        $('#submit').hide()
         $('#values').hide()
         $('#funny').hide()
+        $('#zodiacMatch').show()
         zodiac(days,months)
         var sign=zodiac(days,months)
         console.log(sign)
@@ -194,11 +204,73 @@ $(document).ready(function(){
             $('#astralName').append('<h1>Scorpio</h1>')
             $('#pictureSign').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/scorpio-article-300x169.jpeg" />')
             $('#descriptionSign').append("<p>As a Martian sign, Scorpios are natural fighters. They are composed and calm on the exterior, but within they are bursting with energy and power. At a moment’s notice, you can spring into action. You are hard-working and you possess great inner strength.</p>")
+        }else if (sign === 'Aries'){
+            $('#astralName').append('<h1>Aries</h1>')
+            $('#pictureSign').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/aries-article-300x169.jpeg" />')
+            $('#descriptionSign').append("<p>As the first sign of the zodiac, Aries is the sign of pioneers and adventurers. You are often the leader among your peers. You are friendly and compassionate toward others. You look after your head.</p>")
         }
     })
 })
 
 
+$(document).ready(function(){
+    $('#zodiacMatch').one(('click'),function(){
+        $('#astral').hide()
+        $('#match').show()
+        zodiac(days,months)
+        var sign=zodiac(days,months)
+        console.log(sign)
+    if (sign === 'Sagittarius'){
+        $('#matchName').append('<h1>Your match is Aries</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/aries-article-300x169.jpeg" />')
+        $('#matchDescription').append("<p>Sagittarius and Aries are two notable examples of free love birds. Aries and Sagittarius can form a quick bond because of their natural receptivity, desire to learn, and self-assurance. </p>")
+    } else if (sign ==='Capricorn'){
+        $('#matchName').append('<h1>Your match is Virgo</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/05/virgo-article-300x169.jpg" />')
+        $('#matchDescription').append("<p>Capricorn and Virgo make one of the most harmonious pairings in the zodiac, and Virgo is probably the Capricorn best match. Equal parts pragmatic and passionate, Capricorns and Virgos work side-by-side to care for loved ones and create a welcoming home.</p>")
+   } else if( sign === 'Aquarius'){
+        $('#matchName').append('<h1>Your best match is Gemini</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/gemini-article-300x169.jpeg" />')
+        $('#matchDescription').append("<p>Gemini and Aquarius are two Air signs whose carefree spirits and merry natures create a strong initial attraction.</p>")
+   } else if(sign ==='Pisces'){
+        $('#matchName').append('<h1>Your best match is Taurus</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/taurus-article-300x169.jpeg" />')
+        $('#matchDescription').append("<p>Taurus and Pisces are well-suited for domestic bliss, sharing sensuality, creativity, and an enthusiasm for intellectual discussions.</p>")
+   } else if(sign === 'Taurus'){
+        $('#matchName').append('<h1>Your best match is Taurus</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/taurus-article-300x169.jpeg" />')
+        $('#descriptionSign').append("<pThat’s right. The ultimate match for Taurus is...another Taurus. Think about it: Taurus values loyalty and stability. They’re romantics whose perfect date includes both fine dining and hooking up in a Snuggie. </p>")
+   } else if(sign ==='Gemini'){
+        $('#matchName').append('<h1>Your best match is Pisces</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/pisces-article-300x169.jpeg" />')
+        $('#matchDescription').append("<p>This might be a surprise to other signs— “Isn’t Gemini too aloof for Pisces?” “Isn’t Pisces too weepy for Gemini?” But any Gemini who loves (or has loved) a Pisces knows that this is the match.</p>")
+   } else if (sign === 'Cancer'){
+        $('#matchName').append('<h1>Your best match is Scorpio</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/scorpio-article-300x169.jpeg" />')
+        $('#matchDescription').append("<p>A typical Cancer thinks Romeo & Juliet is the perfect love story and just one huge communication error. That’s because they crave commitment and need to know their partners are in it for the long haul. </p>")
+   } else if (sign ==='Leo'){
+        $('#matchName').append('<h1>Your best match is Aries</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/aries-article-300x169.jpeg" />')
+        $('#matchDescription').append("<p>Ganesha says that Because Leo and Aries are both fire signs, it's no surprise that their sharp minds and towering personas make for a winning love and marriage combo.</p>")
+    } else if (sign ==='Virgo'){
+        $('#matchName').append('<h1>Your best match is Scorpio</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/scorpio-article-300x169.jpeg" />')
+        $('#matchDescription').append("<p>Scorpio is the Virgo most compatible sign. Scorpio makes a good match for Virgo because they have similar approaches to life</p>")
+    } else if (sign ==='Libra'){
+        $('#matchName').append('<h1>Your best match is Aries</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/aries-article-300x169.jpeg" />')
+        $('#matchDescription').append("<p>Libras and Aries have a lot in common: both are creative, social, and full of optimism. However, this can lead to this pairing making risky decisions together because they didn't fully consider the consequences.</p>")
+   } else if (sign === 'Scorpio'){
+        $('#matchName').append('<h1>Your best match is Cancer</h1>')
+        $('#matchPicture#pictureSign').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/cancer-article-300x169.jpeg" />')
+        $('#matchDescription').append("<p>The absolute best match for a Scorpio is fellow water sign Cancer. There’s natural compatibility between signs of the same element, and both signs are huge on trust and intimacy. </p>")
+    } else if (sign ==='Aries'){
+        $('#matchName').append('<h1>Your best match is Taurus</h1>')
+        $('#matchPicture').append('<img src="https://popularvedicscience.com/wp-content/uploads/2022/04/taurus-article-300x169.jpeg" />')
+        $('#matchDescription').append("<p>Ganesha says Aries and Taurus both are fire signs and hence it shares few common traits in their personality but Aries is an easy-going person while Taurus cares too much and is over-thinker and thus harms the love and marriage compatibility of the both.</p>")
+    }
+    })
+})
 
 
 
