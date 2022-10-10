@@ -1,0 +1,68 @@
+body {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-image:url('https://images.wallpaperscraft.com/image/single/wall_clock_roman_numerals_zodiac_signs_113652_3840x2160.jpg');
+    background-size: cover;
+  }
+
+  #days,#months,#years{
+    size:50px;
+    width:100px;
+    height:30px;
+    margin-right:20px;
+    margin-bottom: 20px;
+    border:0;
+    box-shadow:0 0 20px 5px rgb(0, 0, 0);
+    border-radius:10px;
+    text-align: center;
+  }
+
+
+  #submit {
+    position: relative;
+    right: -100px;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    touch-action: manipulation;
+ }
+
+  #submit:after {
+    content: "";
+    background-color: #ffe54c;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+ }
+
+  #submit:hover:after {
+  top: 0px;
+  left: 0px;
+ }
+
+ #values{
+    margin-top: 50px;
+    color:#482307;
+    background-color:#ffe54c;
+    border: 0 solid #e5e7eb;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 100%;
+    font-weight: 700;
+    line-height: 24px;
+    outline: 2px solid transparent;
+    text-align: center;
+ }
