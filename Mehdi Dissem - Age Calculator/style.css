@@ -4,9 +4,45 @@ body {
     display: grid;
     justify-items: center;
     align-items: center;
-    background-image:url('https://images.wallpaperscraft.com/image/single/wall_clock_roman_numerals_zodiac_signs_113652_3840x2160.jpg');
+    
     background-size: cover;
   }
+
+  #background-video {
+   width: 100vw;
+   height: 100vh;
+   object-fit: cover;
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: -1;
+ }
+
+   #stopvid{
+   display: inline-block;
+   outline: 0;
+   cursor: pointer;
+   border-radius: 8px;
+   box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+   background: #FFD814;
+   border: 1px solid #FCD200;
+   font-size: 11px;
+   height: 22px;
+   position:absolute; 
+   left:80px;
+   top: 20px;
+   text-align: center;
+   font-weight: 500;
+   color: #0F1111;
+}
+   #stopvid:hover{
+   background: #F7CA00;
+   border-color: #F2C200;
+   box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+ }
+      
 
   #days,#months,#years{
     size:50px;
@@ -41,10 +77,10 @@ body {
     background-color: #ffe54c;
     width: 100%;
     z-index: -1;
-    position: absolute;
+   position: absolute;
     height: 100%;
     top: 7px;
-    left: 7px;
+    left: 7px; 
     transition: 0.2s;
  }
 
@@ -54,17 +90,19 @@ body {
  }
 
   #funnyButton{    
-    position: relative;
-    right: 0px;
-    font-size: 16px;
-    font-weight: 200;
-    letter-spacing: 1px;
-    padding: 13px 20px 13px;
-    border: 1px solid black;
-    cursor: pointer;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0);
-    touch-action: manipulation;
+   position: relative;
+   top:20px;
+   right: 80px;
+   font-size: 16px;
+   font-weight: 200;
+   letter-spacing: 1px;
+   padding: 13px 20px 13px;
+   outline: 0;
+   border: 1px solid black;
+   cursor: pointer;
+   position: relative;
+   background-color: rgba(0, 0, 0, 0);
+   touch-action: manipulation;
  }
 
  #funnyButton:after{
@@ -85,6 +123,9 @@ body {
  }
 
  #values{
+    position:relative;
+    right:80px;
+    width:400px;
     margin-top: 50px;
     color:#482307;
     background-color:#ffe54c;
@@ -97,3 +138,61 @@ body {
     outline: 2px solid transparent;
     text-align: center;
  }
+
+ #astralbutton{
+   position: relative;
+   right: 80px;
+   top:20px;
+   font-size: 16px;
+   font-weight: 200;
+   letter-spacing: 1px;
+   padding: 13px 20px 13px;
+   outline: 0;
+   border: 1px solid black;
+   cursor: pointer;
+   position: relative;
+   background-color: rgba(0, 0, 0, 0);
+   touch-action: manipulation;
+ }
+
+ 
+ #astralbutton:after{
+   content: "";
+   background-color: #ffe54c;
+   width: 100%;
+   z-index: -1;
+   position: absolute;
+   height: 100%;
+   top: 7px;
+   left: 7px;
+   transition: 0.2s;
+}
+
+#astralbutton:hover:after{
+   top: 0px;
+   left: 0px;
+}
+
+#funnyString{
+   position: relative;
+    height: 100%;
+    top: 20px;
+    left: -80px;
+}
+
+#descriptionSign{
+   position:relative;
+   right:80px;
+   width:400px;
+   margin-top: 50px;
+   color:#482307;
+   background-color:#ffe54c;
+   border: 0 solid #e5e7eb;
+   border-radius: .5rem;
+   cursor: pointer;
+   font-size: 100%;
+   font-weight: 700;
+   line-height: 24px;
+   outline: 2px solid transparent;
+   text-align: center;
+}

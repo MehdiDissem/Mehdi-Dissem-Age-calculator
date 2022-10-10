@@ -10,8 +10,11 @@
     <title>Age Calculator</title>
 </head>
 <body>
+    <video autoplay muted loop id="background-video">
+    <source id="clockVid" src="./audio/nostalgia clock animation 1280x720.mp4" type="video/mp4">
+    </video>
     <div id="ageInput">
-        <input type="number" id="days" placeholder="days" name="days" max="31"><input type="number" id="months" placeholder="months" min="0" max="12"><input type="number" id="years" placeholder="years" min="1960" max="2022"> <button id="refresh">Refresh Page</button>
+    <button id="stopvid" >Stop video</button><input type="number" id="days" placeholder="days" name="days" max="31"><input type="number" id="months" placeholder="months" min="0" max="12"><input type="number" id="years" placeholder="years" min="1960" max="2022"> <button id="refresh">Refresh Page</button>
         <p></p>
         <button id="submit">Submit your age </button>
     </div>
@@ -25,7 +28,19 @@
         <button id="funnyButton">Funny Facts</button>
         <p id="funnyString"></p>
         <audio id="song" preload="auto"></audio>
+        <!-- <button id="pauseAudio" type="button">Pause Audio</button> -->
     </div>
-    
+
+    <div id="astral">
+        <button id="astralbutton">Your astral sign</button>
+        <p id="astralName"></p>
+        <p id="pictureSign"></p>
+        <p id="descriptionSign"></p>
+    </div>
+    <script>
+    $('#funny').hide()
+    $('#astralbutton').hide()
+    $('#values').hide()
+    </script>
 </body>
 </html>
