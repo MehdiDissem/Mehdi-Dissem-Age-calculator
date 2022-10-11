@@ -19,29 +19,6 @@ body {
    bottom: 0;
    z-index: -1;
  }
-
-   #stopvid{
-   display: inline-block;
-   outline: 0;
-   cursor: pointer;
-   border-radius: 8px;
-   box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
-   background: #FFD814;
-   border: 1px solid #FCD200;
-   font-size: 11px;
-   height: 22px;
-   position:absolute; 
-   left:80px;
-   top: 20px;
-   text-align: center;
-   font-weight: 500;
-   color: #0F1111;
-}
-   #stopvid:hover{
-   background: #F7CA00;
-   border-color: #F2C200;
-   box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
- }
       
 
   #days,#months,#years{
@@ -57,7 +34,7 @@ body {
   }
 
 
-  #submit,#refresh {
+  #submit {
     position: relative;
     right: -100px;
     font-size: 16px;
@@ -70,6 +47,20 @@ body {
     position: relative;
     background-color: rgba(0, 0, 0, 0);
     touch-action: manipulation;
+ }
+ #refresh{
+   position: relative;
+   right: -450px;
+   font-size: 16px;
+   font-weight: 200;
+   letter-spacing: 1px;
+   padding: 13px 20px 13px;
+   outline: 0;
+   border: 1px solid black;
+   cursor: pointer;
+   position: relative;
+   background-color: rgba(0, 0, 0, 0);
+   touch-action: manipulation;
  }
 
   #submit:after,#refresh:after {
@@ -90,7 +81,7 @@ body {
  }
 
   #funnyButton{    
-   position: relative;
+   position: center;
    top:20px;
    right: 80px;
    font-size: 16px;
@@ -140,8 +131,7 @@ body {
  }
 
  #astralbutton{
-   position: relative;
-   right: 80px;
+   position: center;
    top:20px;
    font-size: 16px;
    font-weight: 200;
@@ -164,7 +154,7 @@ body {
    position: absolute;
    height: 100%;
    top: 7px;
-   left: 0px;
+   left: 7px;
    transition: 0.2s;
 }
 
@@ -181,8 +171,7 @@ body {
 }
 
 #descriptionSign, #matchDescription{
-   position:relative;
-   right:80px;
+   position:center;
    width:400px;
    margin-top: 50px;
    color:#482307;
@@ -199,7 +188,6 @@ body {
 
 #zodiacMatch{
    position: relative;
-   right: 80px;
    top:20px;
    font-size: 16px;
    font-weight: 200;
@@ -228,4 +216,32 @@ body {
 #zodiacMatch:hover:after{
    top: 0px;
    left: 0px;
+}
+
+#changeColor{
+   display: inline-block;
+   outline: 0;
+   cursor: pointer;
+   border-radius: 8px;
+   box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+   background: #FFD814;
+   border: 1px solid #FCD200;
+   font-size: 11px;
+   height: 22px;
+   position:absolute; 
+   left:80px;
+   top: 20px;
+   text-align: center;
+   font-weight: 500;
+   color: #0F1111;
+}
+
+#astralName, #matchName{
+   padding-top: 20px;
+   margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: normal;
+	font-family: 'Orienta', sans-serif;
 }

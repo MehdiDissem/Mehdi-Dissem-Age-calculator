@@ -13,8 +13,12 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#submit").one(('click'),function(){
         days = $("#days").val()*1;
+        console.log(days)
         months = $('#months').val()*1;
         years = $('#years').val()*1;
+        var day = days + (months*30) + ((2022-years) * 365)
+        var month = (days * 24) + (months * 730) + ((2022-years) * 8760)
+        var sec = (days * 86400) + (months * 2629800) + ((2022-years) * 31556952)
         if(days === 0 && months === 0 && years === 0){
             alert("Please enter your age")
         } else if(days===0 || months===0 || years ===0){
@@ -22,23 +26,26 @@ $(document).ready(function(){
         } else {
         $('#values').show()
         $('#funny').show()
-        $('#ShowSeconds').append($('<p>  Your age in seconds:' + (days * 86400) + (months * 2629800) + ((2022-years) * 31556952) +' </p>'))
-        $('#ShowHours').append($('<p>  Your age in hours:' + (days * 24) + (months * 730) + ((2022-years) * 8760) +' </p>'))
-        $('#ShowDays').append($('<p>  Your age in days:' + days + (months*30) + ((2022-years) * 365) +' </p>'))
+        $('#ShowSeconds').append($('<p>  Your age in seconds:' + sec + ' </p>'))
+        $('#ShowHours').append($('<p>  Your age in hours:' + month +' </p>'))
+        $('#ShowDays').append($('<p>  Your age in days:' + day +' </p>'))
+        console.log(days + (months*30) + ((2022-years) * 365))
 }});
 });
 
-const sixties = new Audio("./audio/Percy Faith - Theme From A Summer Place.mp3")
-const seventies = new Audio("./audio/Guess Who No Sugar Tonight.mp3")
-const eighties = new Audio("./audio/Beat It - Michael Jackson.mp3")
-const nineties = new Audio("./audio/Nirvana - Smells Like Teen Spirit .mp3")
-const twenties = new Audio("./audio/Destiny's Child - Say My Name .mp3")
-const twentyten = new Audio("./audio/Kesha - TiK ToK .mp3")
-const twentytwenty = new Audio("./audio/baby shark .mp3")
-const coffin = new Audio("./audio/Coffin Dance.mp3")
+var sixties = new Audio("./audio/Percy Faith - Theme From A Summer Place.mp3")
+var seventies = new Audio("./audio/Guess Who No Sugar Tonight.mp3")
+var eighties = new Audio("./audio/Beat It - Michael Jackson.mp3")
+var nineties = new Audio("./audio/Nirvana - Smells Like Teen Spirit .mp3")
+var twenties = new Audio("./audio/Destiny's Child - Say My Name .mp3")
+var twentyten = new Audio("./audio/Kesha - TiK ToK .mp3")
+var twentytwenty = new Audio("./audio/baby shark .mp3")
+var coffin = new Audio("./audio/Coffin Dance.mp3")
+var future = new Audio("./audio/Back from the future.mp3")
 
 $(document).ready(function(){
     $('#funnyButton').one(('click'),function(){
+        $('#funnyButton').animate({right: '50px'})
         $('#astralbutton').show()
         if (years>1960 && years<=1970){
             $('#funnyString').append($('<img src="./audio/Senior-and-Elderly-Care-Living-Options.jpg" />'))
@@ -64,7 +71,8 @@ $(document).ready(function(){
             twentytwenty.play()
             $('#funnyString').append('<img src="https://i.pinimg.com/originals/f2/a6/69/f2a6691f43a9dda204e70f4c5ac4d9ca.gif" />')
         }else if(years>=2023){
-            $('#funnyString').append('<img src="https://media.tenor.com/7qKSpgK9daQAAAAC/glow-sperm.gif />')
+            future.play()
+            $('#funnyString').append('<img src="./audio/backfromthefuturepicture.png" />')
         } else if(years<=1960){
             coffin.play()
             $('#funnyString').append('<img src="./audio/dancing-coffin-coffin-dance (1).gif" />')
@@ -271,14 +279,3 @@ $(document).ready(function(){
     }
     })
 })
-
-
-
-// var vid = document.getElementById('clockVid')
-// var stopvid=document.getElementById('stopvid')
-
-// $("#stopvid").click(function(event){
-//     $('clockVid').pause()
-// })
-
-

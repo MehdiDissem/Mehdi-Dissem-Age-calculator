@@ -8,13 +8,14 @@
     <script src="jquery.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Age Calculator</title>
+    <link rel="icon" type="image/x-icon" href="./audio/icons8-old-fashioned-clock-48.png">
 </head>
 <body>
     <video autoplay muted loop id="background-video">
     <source id="clockVid" src="./audio/nostalgia clock animation 1280x720.mp4" type="video/mp4">
     </video>
     <div id="ageInput">
-    <button id="stopvid" >Stop video</button><input type="number" id="days" placeholder="days" name="days" max="31"><input type="number" id="months" placeholder="months" min="0" max="12"><input type="number" id="years" placeholder="years" min="1960" max="2022"> <button id="refresh">Refresh Page</button>
+    <input type="number" id="days" placeholder="days" name="days" max="31"><input type="number" id="months" placeholder="months" min="0" max="12"><input type="number" id="years" placeholder="years" min="1960" max="2022"> <button class="couleur" id="refresh">Refresh Page</button>
         <p></p>
         <button id="submit">Submit your age </button>
     </div>
@@ -28,7 +29,6 @@
         <button id="funnyButton">Funny Facts</button>
         <p id="funnyString"></p>
         <audio id="song" preload="auto"></audio>
-        <!-- <button id="pauseAudio" type="button">Pause Audio</button> -->
     </div>
 
     <div id="astral">
